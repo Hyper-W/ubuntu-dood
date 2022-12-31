@@ -1,0 +1,16 @@
+services:
+  ubuntu-dood:
+    build:
+      context: .
+      args:
+        - USER=${USER:-user} # Your User Name
+        - USER_ID=${USER_ID:-1000} # Your User ID
+        - GROUP_ID=${GROUP_ID:-1000} # Your GROUP ID
+    container_name: ubuntu-dood
+    image: ubuntu-dood
+    volumes:
+      - type: bind
+        source: /var/run/docker.sock
+        target: /var/run/docker.sock
+    tty: true
+    command: bash
