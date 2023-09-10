@@ -20,3 +20,5 @@ RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates
 ENV PATH=$PATH:/usr/libexec/docker/cli-plugins/
 
 USER ${USER}
+
+WORKDIR /home/${USER}
