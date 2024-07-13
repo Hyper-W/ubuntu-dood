@@ -1,5 +1,8 @@
 FROM ubuntu:latest
 
+# For above Ubuntu 24.04
+RUN touch /var/mail/ubuntu && chown ubuntu /var/mail/ubuntu && userdel -r ubuntu ; exit 0
+
 # Your Property
 ARG USER=user
 ARG USER_ID=1000
